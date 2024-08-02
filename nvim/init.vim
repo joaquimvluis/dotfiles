@@ -8,8 +8,14 @@ filetype plugin on
 filetype plugin indent on
 syntax on
 
+" Search options
 " Disable search highlight
 set nohlsearch
+" Case insensitive search
+set ignorecase
+" Automatically switch to case-sensitive search if use any capital letter (must
+" set ignorecase)
+set smartcase
 
 " Show line numbers in document
 set number
@@ -36,6 +42,14 @@ set cursorline
 set expandtab " indent using spaces
 set shiftwidth=4 " number of spaces for one level of indentation
 set tabstop=4 " number of spaces per tab
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Remaps
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Set the leader key to space
+let mapleader = "\<Space>"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Splits and Tabbed Files
@@ -105,6 +119,10 @@ Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/joshdick/onedark.vim'
 Plug 'EdenEast/nightfox.nvim'
 
+" VimWiki, personal wiki for Vim
+
+Plug 'vimwiki/vimwiki'
+
 " Language
 " Plug 'neovim/nvim-lspconfig'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -115,9 +133,14 @@ call plug#end()
 
 " lua require('configs/lspconfig')
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => PLUGIN CONFIGURATIONS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VimWiki
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+" Override Vimwiki syntax with Markdown syntax
+autocmd FileType vimwiki setlocal syntax=markdown
 
 " COLOR SCHEME ---------------------------------------------------------------
 "

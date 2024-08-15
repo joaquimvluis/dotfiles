@@ -1,0 +1,61 @@
+[/]
+calculator=['<Super>c']
+control-center=['<Super>i']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/']
+email=@as []
+home=@as []
+logout=@as []
+next=@as []
+pause=@as []
+play=['<Primary><Alt>space']
+screensaver=['<Super>x']
+search=@as []
+terminal=['<Super>Return']
+volume-down=['<Primary><Alt>Down']
+volume-mute=['<Primary><Alt>m']
+volume-up=['<Primary><Alt>Up']
+www=['<Super>w']
+
+[custom-keybindings/custom0]
+binding='<Super>e'
+command='gedit'
+name='Launch text editor'
+
+[custom-keybindings/custom1]
+binding='<Shift><Super>w'
+command='firefox --private-window'
+name='Launch Private Browser Window'
+
+[custom-keybindings/custom2]
+binding='<Super>q'
+command='qutebrowser'
+name='Launch qutebrowser'
+
+[custom-keybindings/custom3]
+binding='<Primary><Alt>Delete'
+command='xkill'
+name='Run xkill'
+
+[custom-keybindings/custom4]
+binding='<Primary><Alt>d'
+command='dconf write /org/gnome/pomodoro/preferences/show-screen-notifications false'
+name='Disable pomodoro overlay'
+
+[custom-keybindings/custom5]
+binding='<Primary><Alt>e'
+command='dconf write /org/gnome/pomodoro/preferences/show-screen-notifications true'
+name='Turn On Pomodoro overlay'
+
+[custom-keybindings/custom6]
+binding='Print'
+command='flameshot gui'
+name='Launch Flameshot'
+
+[custom-keybindings/custom7]
+command='/usr/bin/diodon'
+name='Launch Diodo clipboard manager'
+
+[custom-keybindings/custom8]
+binding='<Super>f'
+command='thunar'
+name='Launch Thunar'

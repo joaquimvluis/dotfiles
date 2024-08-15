@@ -1,0 +1,129 @@
+{
+    // general
+    "editor.defaultFormatter": null,
+    "editor.formatOnSave": true, // enable per language
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.tabCompletion": "on",
+    "editor.snippetSuggestions": "top",
+    // Language specific
+    // Javascript, Javascript React (JSX)
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": true
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.jsxSingleQuote": true,
+    "prettier.singleQuote": true,
+    // Python
+    "[python]": {
+        // "editor.defaultFormatter": "ms-python.autopep8",
+        "editor.formatOnType": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "ms-python.autopep8",
+    },
+    "autopep8.args": [
+        "--ignore=E4", // autopep ignores imports
+        // "--max-line-length=100" // default is 79
+    ],
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[mjml]": {
+        "editor.defaultFormatter": "mjmlio.vscode-mjml"
+    },
+    "editor.minimap.enabled": false,
+    "editor.lineNumbers": "relative",
+    "editor.fontSize": 18,
+    "editor.overviewRulerBorder": false, // removes border from overview ruler (located on the right, same position as the scrollbar)
+    "editor.hideCursorInOverviewRuler": true, // hides cursor mark in the overview ruler
+    "editor.folding": true, // toggles folding feature
+    "editor.glyphMargin": true, // removes the space used mainly for debugging indicators
+    "explorer.openEditors.visible": 0, // removes the activity bar (the 4 icons at the left of the screen), so now you will have to open the explorer, git, debugger and extension with shortcuts or through the Command Palette
+    "workbench.editor.showIcons": false, // removes icon from opened files in tabs
+    "workbench.editor.tabCloseButton": "off", // removes cross icon from tabs
+    "window.menuBarVisibility": "toggle", // removes border to highlight active tabs (the colors formats are: #RGB, #RGBA, #RRGGBB or #RRGGBBAA)
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "workbench.colorCustomizations": {
+        "workbench.background": "#000000",
+        "sideBar.background": "#1b1b1b",
+        "editor.background": "#1a1a1a",
+        "editorGroupHeader.tabsBackground": "#1a1a1a",
+        "tab.inactiveBackground": "#1c1c1c",
+        "statusBar.background": "#1c1c1c",
+    },
+    "editor.rulers": [
+        79
+    ],
+    "editor.detectIndentation": true,
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-e>": false,
+        "<C-b>": false,
+        "<C-s>": false,
+        "<C-z>": false,
+        "<C-c>": false,
+        "<C-v>": false,
+        "<C-y>": false,
+        "<C-w>": false,
+    },
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<C-d>"
+            ],
+            "after": [
+                "<C-d>",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "<C-u>"
+            ],
+            "after": [
+                "<C-u>",
+                "z",
+                "z"
+            ]
+        }
+    ],
+    "editor.inlineSuggest.enabled": true,
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+        // "editor.wordWrap": "bounded",
+        "editor.wrappingIndent": "same",
+        "editor.wordWrapColumn": 79
+    },
+    "editor.formatOnSaveMode": "modifications",
+    "python.defaultInterpreterPath": "/home/jvl/.pyenv/versions/3.10.13/envs/platform-3.10",
+    "workbench.activityBar.location": "hidden",
+    "workbench.editor.tabActionCloseVisibility": false,
+    "CodeGPT.apiKey": "CodeGPT Plus Beta",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "right"
+    },
+    "github.copilot.editor.enableAutoCompletions": true
+}

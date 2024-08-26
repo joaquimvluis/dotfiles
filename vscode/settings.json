@@ -53,24 +53,22 @@
     },
     "editor.minimap.enabled": false,
     "editor.lineNumbers": "relative",
-    "editor.fontSize": 18,
     "editor.overviewRulerBorder": false, // removes border from overview ruler (located on the right, same position as the scrollbar)
     "editor.hideCursorInOverviewRuler": true, // hides cursor mark in the overview ruler
     "editor.folding": true, // toggles folding feature
     "editor.glyphMargin": true, // removes the space used mainly for debugging indicators
-    "explorer.openEditors.visible": 0, // removes the activity bar (the 4 icons at the left of the screen), so now you will have to open the explorer, git, debugger and extension with shortcuts or through the Command Palette
+    "explorer.openEditors.visible": 1, // removes the activity bar (the 4 icons at the left of the screen), so now you will have to open the explorer, git, debugger and extension with shortcuts or through the Command Palette
     "workbench.editor.showIcons": false, // removes icon from opened files in tabs
     "workbench.editor.tabCloseButton": "off", // removes cross icon from tabs
-    "window.menuBarVisibility": "toggle", // removes border to highlight active tabs (the colors formats are: #RGB, #RGBA, #RRGGBB or #RRGGBBAA)
-    "workbench.colorTheme": "One Dark Pro Darker",
-    "workbench.colorCustomizations": {
-        "workbench.background": "#000000",
-        "sideBar.background": "#1b1b1b",
-        "editor.background": "#1a1a1a",
-        "editorGroupHeader.tabsBackground": "#1a1a1a",
-        "tab.inactiveBackground": "#1c1c1c",
-        "statusBar.background": "#1c1c1c",
-    },
+    "window.menuBarVisibility": "toggle",
+    // "workbench.colorCustomizations": {
+    //     "workbench.background": "#000000",
+    //     "sideBar.background": "#1b1b1b",
+    //     "editor.background": "#1a1a1a",
+    //     "editorGroupHeader.tabsBackground": "#1a1a1a",
+    //     "tab.inactiveBackground": "#1c1c1c",
+    //     "statusBar.background": "#1c1c1c",
+    // },
     "editor.rulers": [
         79
     ],
@@ -119,11 +117,16 @@
     "python.defaultInterpreterPath": "/home/jvl/.pyenv/versions/3.10.13/envs/platform-3.10",
     "workbench.activityBar.location": "hidden",
     "workbench.editor.tabActionCloseVisibility": false,
-    "CodeGPT.apiKey": "CodeGPT Plus Beta",
+    "CodeGPT.apiKey": "CodeGPT Plus",
     "diffEditor.ignoreTrimWhitespace": false,
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "right"
     },
-    "github.copilot.editor.enableAutoCompletions": true
+    "github.copilot.editor.enableAutoCompletions": true,
+    "workbench.colorTheme": "Atom One Dark Coal",
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredDarkColorTheme": "Atom One Dark Coal",
+    "workbench.preferredLightColorTheme": "Atom One Half Light",
+    "editor.fontSize": 16
 }

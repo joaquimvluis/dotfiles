@@ -128,5 +128,6 @@
     "window.autoDetectColorScheme": true,
     "workbench.preferredDarkColorTheme": "Atom One Dark Coal",
     "workbench.preferredLightColorTheme": "Atom One Half Light",
-    "editor.fontSize": 16
+    "editor.fontSize": 16,
+    "git.openRepositoryInParentFolders": "never"
 }

@@ -12,3 +12,4 @@
 # cd $brainstormr
 spci=~/code/starkdataai/spci/
 platform=~/code/starkdataai/platform/
+bindkey '^Xc' 'clear'

@@ -40,6 +40,9 @@ alias fsh="flask shell"
 alias fdbg="flask --debug run"
 alias fnoauth="DISABLE_TOKEN_AUTH=true flask --debug run"
 alias fdb="flask db"
+alias fdbu="flask db upgrade"
+alias fdbd="flask db downgrade"
+alias fdbm="flask db migrate -m"
 alias fdbc="flask db current"
 alias fdbh="flask db history"
 # Highlight flask db history revision
@@ -79,7 +82,8 @@ alias pink="mpv --loop ~/Music/noises/pink_noise.mp3 --volume=80"
 alias fakecam="~/bin/camera-effects/fakecam.sh"
 
 # docker commands
-alias docker-psql="docker run --name local-postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d --rm postgres"
-
+alias docker-psql="docker run --name local-postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d --rm postgres:latest"
+alias docker-psql-reset="docker stop local-postgres && sleep 1 && docker-psql"
 # OTHER
-grut="git status -s | grep '^\?\?' | cut -c4- | xargs -p -I {} mv {} /tmp/"
+# git restore untrack to /tmp/
+alias grut="git status -s | grep '^\?\?' | cut -c4- | xargs -p -I {} mv {} /tmp/"

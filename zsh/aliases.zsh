@@ -78,6 +78,7 @@ alias treejs="tree -I 'node_modules'"
 # Play white noise
 alias noise="mpv --loop ~/Music/noises/brown_pink_white_noise.wav --volume=80"
 alias pink="mpv --loop ~/Music/noises/pink_noise.mp3 --volume=80"
+alias brown="mpv --loop ~/Music/noises/brown_noise.mp3 --volume=80"
 # Create fake camera with blurred background
 alias fakecam="~/bin/camera-effects/fakecam.sh"
 

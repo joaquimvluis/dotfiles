@@ -125,3 +125,5 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 export PATH="$HOME/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -123,7 +123,7 @@
         "default": "right",
         "jupyter-notebook": "right"
     },
-    "github.copilot.editor.enableAutoCompletions": true,
+    "github.copilot.editor.enableAutoCompletions": false,
     "workbench.colorTheme": "Atom One Dark Coal",
     "window.autoDetectColorScheme": true,
     "workbench.preferredDarkColorTheme": "Atom One Dark Coal",

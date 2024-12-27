@@ -126,4 +126,6 @@ eval "$(pyenv virtualenv-init -)"
 
 export PATH="$HOME/bin:$PATH"
 
+export LANG=en_US.UTF-8
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -6,11 +6,13 @@ check_aliases() {
 
 }
 # Config files
+alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
 alias view="nvim -R"
+alias dotfiles="cd ~/dotfiles/"
 alias vimconfig="vim ~/dotfiles/nvim/init.vim"
-alias zshconfig="vim ~/.zshrc"
+alias zshconfig="vim ~/dotfiles/zsh/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias gitconfig="vim ~/.gitconfig"
 alias sshconfig="vim ~/.ssh/config"

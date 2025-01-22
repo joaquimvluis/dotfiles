@@ -6,7 +6,7 @@
 # 'send' is alias for 'send-keys'
 
 SESSION_NAME="platform"
-CHANGE_DIR="pfb"
+CHANGE_DIR="pfb && clear"
 
 # check if session already exists
 if tmux has-session -t $SESSION_NAME 2>/dev/null; then
@@ -19,6 +19,7 @@ else
     # create new windows and rename
     tmux new-window -t $SESSION_NAME ';' rename-window pytest ';' send $CHANGE_DIR C-m
     tmux new-window -t $SESSION_NAME ';' rename-window shell ';' send $CHANGE_DIR C-m
+    tmux select-window -t 1
 fi
 
 SESSION_NAME=audio

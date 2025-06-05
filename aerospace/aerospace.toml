@@ -192,9 +192,16 @@ alt-m = 'fullscreen'
 
 # Launch apps
 # 'open' options: -a application, -n new instance
-alt-enter = 'exec-and-forget open -na "alacritty"'
-alt-w = 'exec-and-forget open -na "Google Chrome"'
-alt-shift-w = 'exec-and-forget open -na "Google Chrome" --args --incognito'
+
+# Terminal
+# alt-enter = 'exec-and-forget open -na "alacritty"'
+alt-enter = 'exec-and-forget open -na "wezterm"'
+# Firefox
+alt-w = 'exec-and-forget open -na "Firefox"'
+alt-shift-w = 'exec-and-forget open -na "Firefox" --args -private-window'
+# Google Chrome
+# alt-w = 'exec-and-forget open -na "Google Chrome"'
+# alt-shift-w = 'exec-and-forget open -na "Google Chrome" --args --incognito'
 alt-p = 'exec-and-forget open -a "Postman"'
 alt-d = 'exec-and-forget open -a "DBeaver"'
 

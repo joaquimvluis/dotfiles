@@ -117,6 +117,20 @@ alt-shift-l = 'move right'
 alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
+
+# move and focus with multiple monitors
+# See: https://nikitabobko.github.io/AeroSpace/commands#focus-monitor
+ctrl-shift-h = 'focus-monitor left'
+ctrl-shift-j = 'focus-monitor down'
+ctrl-shift-k = 'focus-monitor up'
+ctrl-shift-l = 'focus-monitor right'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#focus-monitor
+ctrl-alt-shift-h = 'move-node-to-monitor --focus-follows-window left'
+ctrl-alt-shift-j = 'move-node-to-monitor --focus-follows-window down'
+ctrl-alt-shift-k = 'move-node-to-monitor --focus-follows-window up'
+ctrl-alt-shift-l = 'move-node-to-monitor --focus-follows-window right'
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'

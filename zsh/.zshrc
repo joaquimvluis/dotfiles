@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(z git common-aliases)
+plugins=(z git common-aliases poetry poetry-env)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -128,4 +128,8 @@ export PATH="$HOME/bin:$PATH"
 
 export LANG=en_US.UTF-8
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+## Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+# POETRY
+export PATH="$HOME/.local/bin:$PATH"

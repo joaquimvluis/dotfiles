@@ -38,6 +38,11 @@ config.keys = {
 		mods = "CTRL|SHIFT",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
+	{
+		key = "M",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
 }
 
 -- and finally, return the configuration to wezterm

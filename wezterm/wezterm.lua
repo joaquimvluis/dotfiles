@@ -11,9 +11,15 @@ local config = wezterm.config_builder()
 
 function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
-		return "Catppuccin Mocha"
+		-- return "Catppuccin Mocha"
+		-- return "Tokyo Night"
+		-- return "Solarized Dark (Gogh)"
+		return "Solarized (dark) (terminal.sexy)"
 	else
-		return "Catppuccin Latte"
+		-- return "Catppuccin Latte"
+		-- return "Tokyo Night Day"
+		-- return "Solarized Light (Gogh)"
+		return "Solarized (light) (terminal.sexy)"
 	end
 end
 

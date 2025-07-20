@@ -17,13 +17,12 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias gitconfig="vim ~/.gitconfig"
 alias sshconfig="vim ~/.ssh/config"
 alias tmuxconfig="vim ~/dotfiles/tmux/tmux.conf"
-alias aerospace="vim ~/dotfiles/aerospace/aerospace.toml"
+alias weztermconfig="vim ~/dotfiles/wezterm/wezterm.lua"
+alias aerospaceconfig="vim ~/dotfiles/aerospace/aerospace.toml"
 alias hg="history | grep "
 alias aliases="vim ~/dotfiles/zsh/aliases.zsh"
 alias shortcuts="vim ~/dotfiles/zsh/shortcuts.zsh"
 # LAUNCHERS
-# Launch yewtube. Change to home because shell might be on project venv
-alias yt="cd ~;yt"
 # Launch flatpak chromium app
 alias chromium="flatpak run org.chromium.Chromium"
 # Launch flatpak inkscape app
@@ -58,6 +57,11 @@ alias pytx="pytest -x"
 alias pytdw="pytest --disable-warnings"
 alias pytntb="pytest --tb=no"
 alias pytdwntb="pytest --disable-warnings --tb=no"
+
+# Poetry
+alias prunp="poetry run python"
+alias pave='eval $(poetry env activate)'
+
 # Color python error output
 # Color error messages from python, use as "copython test.py" instead of "python test.py"
 # WARNING: Takes time to run (small but noticeable)
@@ -87,6 +91,7 @@ alias fakecam="~/bin/camera-effects/fakecam.sh"
 
 # docker commands
 alias docker-psql="docker run --name local-postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d --rm postgres:latest"
+alias docker-test-psql="docker run --name test-postgres -p 5432:5432 -e POSTGRES_PASSWORD=test_password -e POSTGRES_USER=test_user -e POSTGRES_DB=test_db -d --rm postgres:latest"
 alias docker-psql-reset="docker stop local-postgres && sleep 1 && docker-psql"
 # OTHER
 # git restore untrack to /tmp/

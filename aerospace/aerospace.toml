@@ -1,20 +1,16 @@
 # Place a copy of this config to ~/.aerospace.toml
 # After that, you can edit ~/.aerospace.toml to your liking
 
-# You can use it to add commands that run after login to macOS user session.
-# 'start-at-login' needs to be 'true' for 'after-login-command' to work
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
-after-login-command = [
-    'exec-and-forget ~/bin/hide_dock.sh',
-    'exec-and-forget borders active_color=0xff268bd2 inactive_color=0xff494d64 width=5.0',
-    'exec-and-forget open -a "Microsoft Teams"'
-]
 
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-    'exec-and-forget sketchybar'
+    'exec-and-forget ~/bin/hide_dock.sh',
+    'exec-and-forget borders active_color=0xff268bd2 inactive_color=0xff494d64 width=5.0',
+    'exec-and-forget sketchybar',
+    'exec-and-forget open -a "Microsoft Teams"'
 ]
 
 # Nofity Sketchybar about workspace change
@@ -113,31 +109,27 @@ alt-k = 'focus up --boundaries all-monitors-outer-frame'
 alt-l = 'focus right --boundaries all-monitors-outer-frame'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
-alt-shift-h = 'move left'
-alt-shift-j = 'move down'
-alt-shift-k = 'move up'
-alt-shift-l = 'move right'
+alt-shift-h ='move left --boundaries all-monitors-outer-frame'
+alt-shift-j ='move down --boundaries all-monitors-outer-frame'
+alt-shift-k ='move up --boundaries all-monitors-outer-frame'
+alt-shift-l ='move right --boundaries all-monitors-outer-frame'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#focus-monitor
-alt-shift-left = 'move-node-to-monitor --focus-follows-window left'
-alt-shift-down = 'move-node-to-monitor --focus-follows-window down'
-alt-shift-up = 'move-node-to-monitor --focus-follows-window up'
-alt-shift-right = 'move-node-to-monitor --focus-follows-window right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
-alt-5 = 'workspace 5'
-alt-6 = 'workspace 6'
-alt-7 = 'workspace 7'
-alt-8 = 'workspace 8'
-alt-9 = 'workspace 9'
+alt-t = 'workspace teams'
+alt-s = 'workspace session'
+# alt-5 = 'workspace 5'
+# alt-6 = 'workspace 6'
+# alt-7 = 'workspace 7'
+# alt-8 = 'workspace 8'
+# alt-9 = 'workspace 9'
 # alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
 # alt-b = 'workspace B'
 # alt-c = 'workspace C'
@@ -166,11 +158,12 @@ alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
 alt-shift-2 = ['move-node-to-workspace 2', 'workspace 2']
 alt-shift-3 = ['move-node-to-workspace 3', 'workspace 3']
 alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4']
-alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5']
-alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
-alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
-alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
-alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
+alt-shift-t = ['move-node-to-workspace teams', 'workspace teams']
+# alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5']
+# alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
+# alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
+# alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
+# alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
 # alt-shift-a = 'move-node-to-workspace A'
 # alt-shift-b = 'move-node-to-workspace B'
 # alt-shift-c = 'move-node-to-workspace C'
@@ -207,36 +200,73 @@ alt-m = 'fullscreen'
 # Terminal
 # alt-enter = 'exec-and-forget open -na "alacritty"'
 alt-enter = 'exec-and-forget open -na "wezterm"'
+
 # Firefox
 alt-w = 'exec-and-forget open -na "Firefox"'
 alt-shift-w = 'exec-and-forget open -na "Firefox" --args -private-window'
+
 # Google Chrome
 # alt-w = 'exec-and-forget open -na "Google Chrome"'
 # alt-shift-w = 'exec-and-forget open -na "Google Chrome" --args --incognito'
 alt-p = 'exec-and-forget open -a "Postman"'
+
+# Other apps
+# DBeaver
 alt-d = 'exec-and-forget open -a "DBeaver"'
 
+# Teams
+# alt-t = 'exec-and-forget open -a "Microsoft Teams"'
 
-# MODES
+# Anytype
+alt-n = 'exec-and-forget open -a "Anytype"' 
+
+# Session
+# alt-s = '''exec-and-forget osascript -e '
+# tell application "Session"
+#     do script
+#     activate
+# end tell'
+# '''
+
+cmd-h = [] # Disable "hide application"
+cmd-alt-h = [] # Disable "hide others"
+
+
+# -- MODES --
+# See: https://nikitabobko.github.io/AeroSpace/commands#mode
 
 alt-shift-enter = 'mode resize'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
+
+alt-shift-a = 'mode app'
+
+alt-shift-s = 'mode secondary'
+
+# -- Resize mode --
 
 [mode.resize.binding]
 h = 'resize width -50'
 j = 'resize height +50'
 k = 'resize height -50'
 l = 'resize width +50'
+# See: https://nikitabobko.github.io/AeroSpace/commands#move
+# alt-shift-h = 'move left'
+# alt-shift-j = 'move down'
+# alt-shift-k = 'move up'
+# alt-shift-l = 'move right'
+
 enter = 'mode main'
 esc = 'mode main'
+
+# -- Service mode --
 
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
+b = ['exec-and-forget sketchybar --reload', 'mode main']
 
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
 #s = ['layout sticky tiling', 'mode main']
@@ -249,3 +279,73 @@ alt-shift-l = ['join-with right', 'mode main']
 down = 'volume down'
 up = 'volume up'
 shift-down = ['volume set 0', 'mode main']
+
+# -- App mode --
+
+[mode.app.binding]
+esc = 'mode main'
+p = ['workspace postman', 'mode main']
+shift-p = ['move-node-to-workspace postman', 'mode main']
+
+d = ['workspace dbeaver', 'mode main']
+shift-d = ['move-node-to-workspace dbeaver', 'mode main']
+
+# Mail
+m = ['workspace mail', 'mode main']
+shift-m = ['move-node-to-workspace mail', 'mode main']
+# open Outlook email (with firefox)
+alt-m = [
+    'workspace mail',
+    'exec-and-forget open -na Firefox --args -new-window "https://outlook.office365.com/mail/"',
+    'mode main'
+]
+
+# Notes
+n = ['workspace notes', 'mode main']
+shift-n = ['move-node-to-workspace notes', 'mode main']
+# open Notion (with Firefox)
+alt-n = [
+    'workspace notes',
+    'exec-and-forget open -na Firefox --args -new-window "https://www.notion.so"'
+]
+
+# -- Secondary mode --
+
+[mode.secondary.binding]
+esc = 'mode main'
+1 = ['workspace S1', 'mode main']
+2 = ['workspace S2', 'mode main']
+shift-1 = ['move-node-to-workspace S1', 'mode main']
+shift-2 = ['move-node-to-workspace S2', 'mode main']
+
+
+# -- App Workspace Assignments --
+[[on-window-detected]]
+if.app-id = 'com.postmanlabs.mac'
+run = 'move-node-to-workspace postman'
+
+[[on-window-detected]]
+if.app-id = 'org.jkiss.dbeaver.core.product'
+run = 'move-node-to-workspace dbeaver'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+run = 'move-node-to-workspace teams'
+
+[[on-window-detected]]
+if.app-id = 'com.anytype.anytype'
+run = 'move-node-to-workspace notes'
+
+[[on-window-detected]]
+if.app-id = 'com.philipyoungg.session-direct'
+run = 'move-node-to-workspace session'
+
+# -- Monitor assignment --
+[workspace-to-monitor-force-assignment]
+1 = 'main'
+2 = 'main'
+3 = 'main'
+4 = 'main'
+# secondary
+S1 = ['secondary', 'built-in']
+S2 = ['secondary', 'built-in']

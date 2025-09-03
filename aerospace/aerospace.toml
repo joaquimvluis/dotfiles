@@ -65,7 +65,8 @@ inner.horizontal = 2
 inner.vertical =   2
 outer.left =       5
 outer.bottom =     5
-outer.top =        5
+# Set space for Sketchybar
+outer.top =        [{monitor.main = 40}, 14]
 outer.right =      5
 
 # 'main' binding mode declaration

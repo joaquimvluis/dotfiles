@@ -96,9 +96,45 @@ alias brown="mpv --loop ~/Music/noises/brown_noise.mp3 --volume=80"
 alias fakecam="~/bin/camera-effects/fakecam.sh"
 
 # docker commands
-alias docker-psql="docker run --name local-postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d --rm postgres:latest"
-alias docker-test-psql="docker run --name test-postgres -p 5432:5432 -e POSTGRES_PASSWORD=test_password -e POSTGRES_USER=test_user -e POSTGRES_DB=test_db -d --rm postgres:latest"
-alias docker-psql-reset="docker stop local-postgres && sleep 1 && docker-psql"
+docker_psql() {
+    # Starts a local PostgreSQL Docker container, optionally resetting it if it already exists.
+    #
+    # Usage:
+    #   docker_psql <db_name> [port]
+    #
+    # Arguments:
+    #   db_name  - Name of the Docker container / database
+    #   port     - (Optional) Local port to map to container's 5432 (default: 5433)
+    #
+    # Behavior:
+    #   - If a container with the given name already exists, it will be stopped first.
+    #   - Starts a new container with POSTGRES_PASSWORD=postgres
+    #   - Container is removed automatically when stopped (--rm)
+
+    local db_name="$1"
+    local port="${2:-5433}"  # default port 5433 if not provided
+
+    if [ -z "$db_name" ]; then
+        echo "Usage: docker_psql <db_name> [port]"
+        return 1
+    fi
+
+    # Stop existing container if it exists
+    if docker ps -a --format '{{.Names}}' | grep -q "^${db_name}$"; then
+        echo "Stopping existing container '$db_name'..."
+        docker stop "$db_name" >/dev/null 2>&1
+        sleep 1
+    fi
+
+    echo "Starting PostgreSQL container '$db_name' on port $port..."
+    docker run \
+        --name "$db_name" \
+        -p "$port":5432 \
+        -e POSTGRES_PASSWORD=postgres \
+        -d --rm \
+        postgres:latest
+}
+
 # OTHER
 # git restore untrack to /tmp/
 alias grut="git status -s | grep '^\?\?' | cut -c4- | xargs -p -I {} mv {} /tmp/"

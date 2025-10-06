@@ -22,6 +22,12 @@ alias aerospaceconfig="vim ~/dotfiles/aerospace/aerospace.toml"
 alias hg="history | grep "
 alias aliases="vim ~/dotfiles/zsh/aliases.zsh"
 alias shortcuts="vim ~/dotfiles/zsh/shortcuts.zsh"
+
+# Aerospace
+def aero (){
+    aerospace list-windows --all | fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
+}
+
 # LAUNCHERS
 # Launch flatpak chromium app
 alias chromium="flatpak run org.chromium.Chromium"

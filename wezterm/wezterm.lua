@@ -30,7 +30,7 @@ config.window_decorations = "RESIZE"
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 
 config.font = wezterm.font("RobotoMono Nerd Font")
-config.font_size = 19
+config.font_size = 16
 
 config.keys = {
 	-- vertical split (right)

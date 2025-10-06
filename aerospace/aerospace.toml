@@ -331,8 +331,8 @@ run = 'move-node-to-workspace dbeaver'
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.teams2'
-run = 'move-node-to-workspace teams'
 
+run = 'move-node-to-workspace teams'
 [[on-window-detected]]
 if.app-id = 'com.anytype.anytype'
 run = 'move-node-to-workspace notes'
@@ -350,3 +350,5 @@ run = 'move-node-to-workspace session'
 # secondary
 S1 = ['secondary', 'built-in']
 S2 = ['secondary', 'built-in']
+# teams = ['secondary', 'built-in']
+session = ['secondary', 'built-in']

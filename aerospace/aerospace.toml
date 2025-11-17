@@ -124,8 +124,10 @@ alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
+alt-d = 'workspace dbeaver'
+alt-n = 'workspace notes'
+alt-p = 'workspace postman'
 alt-t = 'workspace teams'
-alt-s = 'workspace session'
 # alt-5 = 'workspace 5'
 # alt-6 = 'workspace 6'
 # alt-7 = 'workspace 7'
@@ -159,6 +161,9 @@ alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
 alt-shift-2 = ['move-node-to-workspace 2', 'workspace 2']
 alt-shift-3 = ['move-node-to-workspace 3', 'workspace 3']
 alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4']
+alt-shift-d = ['move-node-to-workspace dbeaver', 'workspace dbeaver']
+alt-shift-n = ['move-node-to-workspace notes', 'workspace notes']
+alt-shift-p = ['move-node-to-workspace postman', 'workspace postman']
 alt-shift-t = ['move-node-to-workspace teams', 'workspace teams']
 # alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5']
 # alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
@@ -196,6 +201,7 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 alt-m = 'fullscreen'
 
 # Launch apps
+# Launcher keybinds for most used applications like web browser, terminal, etc.
 # 'open' options: -a application, -n new instance
 
 # Terminal
@@ -209,17 +215,13 @@ alt-shift-w = 'exec-and-forget open -na "Firefox" --args -private-window'
 # Google Chrome
 # alt-w = 'exec-and-forget open -na "Google Chrome"'
 # alt-shift-w = 'exec-and-forget open -na "Google Chrome" --args --incognito'
-alt-p = 'exec-and-forget open -a "Postman"'
 
 # Other apps
 # DBeaver
-alt-d = 'exec-and-forget open -a "DBeaver"'
 
 # Teams
 # alt-t = 'exec-and-forget open -a "Microsoft Teams"'
 
-# Anytype
-alt-n = 'exec-and-forget open -a "Anytype"' 
 
 # Session
 # alt-s = '''exec-and-forget osascript -e '
@@ -282,14 +284,13 @@ up = 'volume up'
 shift-down = ['volume set 0', 'mode main']
 
 # -- App mode --
-
+# Use to bind keys to launch applications without overlapping other bindings.
 [mode.app.binding]
 esc = 'mode main'
-p = ['workspace postman', 'mode main']
-shift-p = ['move-node-to-workspace postman', 'mode main']
 
-d = ['workspace dbeaver', 'mode main']
-shift-d = ['move-node-to-workspace dbeaver', 'mode main']
+alt-d = [ 'exec-and-forget open -a "DBeaver"', 'mode main']
+
+alt-p = ['exec-and-forget open -a "Postman"', 'mode main']
 
 # Mail
 m = ['workspace mail', 'mode main']
@@ -302,16 +303,16 @@ alt-m = [
 ]
 
 # Notes
-n = ['workspace notes', 'mode main']
-shift-n = ['move-node-to-workspace notes', 'mode main']
+# open Anytype
+alt-n = 'exec-and-forget open -a "Anytype"' 
 # open Notion (with Firefox)
-alt-n = [
+alt-o = [
     'workspace notes',
     'exec-and-forget open -na Firefox --args -new-window "https://www.notion.so"'
 ]
 
 # -- Secondary mode --
-
+# Use to manage secondary monitor workspaces
 [mode.secondary.binding]
 esc = 'mode main'
 1 = ['workspace S1', 'mode main']
@@ -331,8 +332,8 @@ run = 'move-node-to-workspace dbeaver'
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.teams2'
-
 run = 'move-node-to-workspace teams'
+
 [[on-window-detected]]
 if.app-id = 'com.anytype.anytype'
 run = 'move-node-to-workspace notes'
@@ -341,7 +342,21 @@ run = 'move-node-to-workspace notes'
 if.app-id = 'com.philipyoungg.session-direct'
 run = 'move-node-to-workspace session'
 
+# floating windows
+[[on-window-detected]]
+if.window-title-regex-substring = 'Shottr'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Preview'
+run = 'layout floating'
+
 # -- Monitor assignment --
+# workspaces with monitor assignment cannot be move.
 [workspace-to-monitor-force-assignment]
 1 = 'main'
 2 = 'main'

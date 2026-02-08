@@ -129,7 +129,12 @@ export PATH="$HOME/bin:$PATH"
 export LANG=en_US.UTF-8
 
 ## Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
+# works for Macos and Linux
+if command -v fzf >/dev/null 2>&1; then
+  source <(fzf --zsh)
+elif [ -f ~/.fzf.zsh ]; then
+  source ~/.fzf.zsh
+fi
 
 # POETRY
 export PATH="$HOME/.local/bin:$PATH"
